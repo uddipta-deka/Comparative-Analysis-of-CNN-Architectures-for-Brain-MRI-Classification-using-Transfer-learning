@@ -1,6 +1,6 @@
 # Comparative Analysis of CNN Architectures for Brain MRI Classification using Two-Stage Transfer Learning with Grad-CAM Interpretation
 
-A deep learning research project performing a systematic comparison of three CNN architectures — VGG16, ResNet50, and EfficientNetB0 — for multiclass brain tumor classification from MRI scans, using a two-stage transfer learning strategy and Grad-CAM visualization for clinical interpretability.
+A deep learning research project performing a systematic comparison of three CNN architectures - VGG16, ResNet50, and EfficientNetB0 - for multiclass brain tumor classification from MRI scans, using a two-stage transfer learning strategy and Grad-CAM visualization for clinical interpretability.
 
 ---
 
@@ -16,13 +16,13 @@ Brain tumor diagnosis from MRI scans is a critical and time-sensitive clinical t
 - **Two-stage transfer learning** - frozen backbone training followed by selective last-block fine-tuning
 - **Functional block equivalence** - Block5 (VGG16), Conv5 (ResNet50), Block7 (EfficientNetB0) unfrozen for fair comparison
 - **Per-class confusion matrices** across all three models
-- Discovered that **EfficientNetB0 resists fine-tuning** due to compound-scaled SE block sensitivity — a research-worthy finding
+- Discovered that **EfficientNetB0 resists fine-tuning** due to compound-scaled SE block sensitivity - a research-worthy finding
 
 ---
 
 ## Dataset
 
-[Brain Tumor MRI Dataset — Kaggle](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset)
+[Brain Tumor MRI Dataset - Kaggle](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset)
 
 - 4 classes: **Glioma, Meningioma, Pituitary Tumor, No Tumor**
 - MRI scan images preprocessed and augmented for training
@@ -33,11 +33,11 @@ Brain tumor diagnosis from MRI scans is a critical and time-sensitive clinical t
 ## Two-Stage Transfer Learning Strategy
 
 ```
-Stage 1 — Feature Extraction
+Stage 1 - Feature Extraction
    Backbone frozen (ImageNet weights)
    Only classification head trained
    ↓
-Stage 2 — Fine-Tuning
+Stage 2 - Fine-Tuning
    Final convolutional block unfrozen
    Entire network trained at low LR (1e-5)
 ```
@@ -80,7 +80,7 @@ Stage 2 — Fine-Tuning
 
 1. **VGG16 and ResNet50** showed clear improvement in Stage 2, confirming that selective last-block unfreezing enables effective task-specific feature adaptation for medical imaging.
 
-2. **EfficientNetB0** exhibited a unique behavior — Stage 2 fine-tuning degraded performance compared to Stage 1. This is attributed to the Squeeze-and-Excitation (SE) attention mechanism in block7, which has a global receptive field and is more sensitive to fine-tuning than localized conv filters. Stage 1 EfficientNetB0 (94.46%) was selected as its representative result.
+2. **EfficientNetB0** exhibited a unique behavior - Stage 2 fine-tuning degraded performance compared to Stage 1. This is attributed to the Squeeze-and-Excitation (SE) attention mechanism in block7, which has a global receptive field and is more sensitive to fine-tuning than localized conv filters. Stage 1 EfficientNetB0 (94.46%) was selected as its representative result.
 
 3. **EfficientNetB0 Stage 1 outperformed both VGG16 and ResNet50 Stage 1**, demonstrating that compound-scaled pretrained features transfer more effectively to medical imaging with a frozen backbone.
 
