@@ -13,8 +13,8 @@ Brain tumor diagnosis from MRI scans is a critical and time-sensitive clinical t
 ## Project Highlights
 
 - **3 CNN architectures** benchmarked under identical training conditions
-- **Two-stage transfer learning** — frozen backbone training followed by selective last-block fine-tuning
-- **Functional block equivalence** — Block5 (VGG16), Conv5 (ResNet50), Block7 (EfficientNetB0) unfrozen for fair comparison
+- **Two-stage transfer learning** - frozen backbone training followed by selective last-block fine-tuning
+- **Functional block equivalence** - Block5 (VGG16), Conv5 (ResNet50), Block7 (EfficientNetB0) unfrozen for fair comparison
 - **Per-class confusion matrices** across all three models
 - Discovered that **EfficientNetB0 resists fine-tuning** due to compound-scaled SE block sensitivity — a research-worthy finding
 
