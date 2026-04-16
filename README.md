@@ -86,9 +86,14 @@ Stage 2 - Fine-Tuning
 
 
 ---
-### 🔍 Hardest Class: Glioma
+### Class Difficulty Analysis
+**Glioma**
+- hardest class (highest confusion rate)
 - Lowest recall across models (~0.70–0.78)
 - High similarity with other tumor classes
+
+**Pituitary & No Tumor**
+- easiest classes (near-perfect classification)
 
 
 ###  Best Model
@@ -109,9 +114,13 @@ Stage 2 - Fine-Tuning
 
 ## 🧪 Explainability (Grad-CAM)
 
-- Generated class activation maps
-- Visualized tumor regions
-- Improved interpretability for medical use
+Grad-CAM visualizations show that:
+- Models correctly focus on tumor regions
+- Misclassifications occur when visual patterns overlap
+- Predictions are explainable and clinically meaningful
+
+This improves trustworthiness for medical applications.
+
 
 
 ## Technologies
@@ -120,7 +129,7 @@ Stage 2 - Fine-Tuning
 
 
 
-## ⭐ Star this repo if you found it useful!
+⭐ If you like this project, consider giving it a star!
 ---
 
 
